@@ -1,12 +1,12 @@
 const express = require('express');
-const bodyParser = require('body-parser');
+const bodyParser = require('body-parser');  //formats the message within our request
 const app = express();
-const axios = require('axios');
+const axios = require('axios'); //makes call to dfe api
 
 app.set('port', process.env.PORT || 8840);
 
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: true })); //urlencoded allows your browser converts characters into a format that can be transmitted over the Internet
 
 app.use((req, res, next) => {
     // TODO: Check for NODE_ENV development

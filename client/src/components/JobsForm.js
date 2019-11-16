@@ -25,7 +25,7 @@ function JobsListForm (props) {
                         ]
                     }
                 ]}
-                defaultPageSize={5}
+                defaultPageSize={10}
                 className="-striped -highlight"
                 filterable={true}
             />
@@ -40,7 +40,7 @@ class JobsForm extends React.Component {
             
         this.state = {
             jobsUrl: 'http://localhost:8840/getDfeJobs',
-            //jobsUrl: 'https://teaching-vacancies.service.gov.uk/api/v1/jobs.json',
+            // jobsUrl: 'https://teaching-vacancies.service.gov.uk/api/v1/jobs.json',
             isJobsListLoaded : false,
             jobsList : null,
             error : null
