@@ -1,5 +1,4 @@
 import React from 'react';
-import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
@@ -8,12 +7,12 @@ import Checkbox from '@material-ui/core/Checkbox';
 import Link from '@material-ui/core/Link';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
-import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import {Link as RouterLink} from 'react-router-dom';
 import DfeLogo from './DFE.png';
+import Tooltip from '@material-ui/core/Tooltip';
 
 function Copyright() {
   return (
@@ -60,20 +59,20 @@ export default function FormPage() {
     <Container component="main" maxWidth="xs">
       <CssBaseline />
       <div className={classes.paper}>
-      
- 
-        <img src={DfeLogo} alt="Logo" height="70"/> 
+
+
+        <img src={DfeLogo} alt="Logo" height="70"/>
         <br />
-        
+
         <Typography component="h1" variant="h4">
           Teachers Direct
         </Typography>
-        <Typography component="" variant="caption1">
+        {/* <Typography component="" variant="caption1">
           Department for Education
-        </Typography>
+        </Typography> */}
 
         <br />
-        <Typography component="h1" variant="subtitle1" align="center">The only place to find all teacher vacancies in the UK.   Where schools apply to you.</Typography>
+        <Typography component="h1" variant="subtitle1" align="center">The only place to find all teacher vacancies in the UK where schools apply to you.</Typography>
        <br />
          <form className={classes.form} noValidate>
           <Grid container spacing={2}>
@@ -82,6 +81,7 @@ export default function FormPage() {
                 autoComplete="fname"
                 name="firstName"
                 variant="outlined"
+                value="Kennedy"
                 required
                 fullWidth
                 id="firstName"
@@ -98,6 +98,7 @@ export default function FormPage() {
                 label="Last Name"
                 name="lastName"
                 autoComplete="lname"
+                value="Mashanda"
               />
             </Grid>
             <Grid item xs={12}>
@@ -109,25 +110,28 @@ export default function FormPage() {
                 label="Date of Birth"
                 name="email"
                 autoComplete="email"
+                value="19/05/1998"
               />
             </Grid>
             <Grid item xs={12}>
+            <Tooltip title="Teacher reference number
+Please note that you need to enter your number without “/” or “RP”. For example, if your number is “RP 99/12345”, just enter “9912345”. If your number is “68/12345” just enter “6812345”. If you don’t know what your teacher reference number is, this can usually be found on your payslip or teachers’ pension documentation; alternatively, please contact the DfE on QTS.enquiries@education.gsi.gov.uk or 0207 593 5394.">
               <TextField
                 variant="outlined"
                 required
                 fullWidth
                 name="password"
                 label="Teacher reference number (TRN)"
-                type="password"
-                id="password"
-                autoComplete="current-password"
+                value="RP4267162"
               />
+              </Tooltip>
             </Grid>
             <Grid item xs={12}>
               <FormControlLabel
                 control={<Checkbox value="allowExtraEmails" color="primary" />}
                 variant="caption"
-                label="I agree to DfE terms and conditions. And agree to receive available teaching jobs and updates via email."
+                label={<Typography variant="body2" align="center" color="textSecondary">I have read and agree to DfE Terms and Conditions and our GDPR compliant Privacy Policy.    You must agree to terms before signing up.</Typography>
+            }
               />
             </Grid>
           </Grid>
@@ -143,7 +147,7 @@ export default function FormPage() {
             Register
           </Button>
           <Grid container justify="flex-end">
-            <Grid item >
+            <Grid item align="center"  >
               <Link href="#" variant="body2" to='/userprofile' component={RouterLink} >
               Already registered? Sign in here.
               </Link>

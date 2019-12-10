@@ -51,6 +51,7 @@ const useStyles = makeStyles(theme => ({
   },
   toolbarTitle: {
     flexGrow: 1,
+    paddingLeft: 50,
   },
   link: {
     margin: theme.spacing(1, 1.5),
@@ -148,7 +149,7 @@ export default function Home() {
       <AppBar position="static" color="default" elevation={0} className={classes.appBar}>
         <Toolbar className={classes.toolbar}>
          <img src={DfeLogo} alt="Logo" height="40"/> 
-          <Typography variant="h6" color="inherit" noWrap className={classes.toolbarTitle}>
+          <Typography variant="h5" color="inherit" noWrap className={classes.toolbarTitle}>
             Teachers Direct
           </Typography>
           <nav>

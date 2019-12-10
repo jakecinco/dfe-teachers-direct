@@ -1,5 +1,4 @@
 import React from 'react';
-import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
@@ -8,11 +7,10 @@ import Checkbox from '@material-ui/core/Checkbox';
 import Link from '@material-ui/core/Link';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
-import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
-import {Link as RouterLink} from 'react-router-dom';
+import { Link as RouterLink } from 'react-router-dom';
 import DfeLogo from './DFE.png';
 
 function Copyright() {
@@ -52,7 +50,7 @@ const useStyles = makeStyles(theme => ({
     margin: theme.spacing(3, 0, 2),
   },
   labelBottom: {
-      fontSize: '9px',
+    fontSize: '9px',
   }
 }));
 
@@ -63,15 +61,15 @@ export default function UserProfileForm() {
     <Container component="main" maxWidth="xs">
       <CssBaseline />
       <div className={classes.paper}>
-      <img src={DfeLogo} alt="Logo" height="70"/> 
+        <img src={DfeLogo} alt="Logo" height="70" />
         <br />
-        
+
         <Typography component="h1" variant="h4">
           Teachers Direct
         </Typography>
-        <Typography component="" variant="caption1">
+        {/* <Typography component="" variant="caption1">
           Department for Education
-        </Typography>
+        </Typography> */}
         <br />
         <Typography component="h2">Teacher Profile</Typography>
         <form className={classes.form} noValidate>
@@ -164,9 +162,12 @@ export default function UserProfileForm() {
             </Grid>
             <Grid item xs={12}>
               <FormControlLabel
-                control={<Checkbox value="allowExtraEmails" color="primary"/>}
+                control={<Checkbox value="allowExtraEmails" color="primary" />}
                 className={classes.labelBottom}
-                label="I can confirm that the above details are correct."
+                label={
+                  <Typography variant="body3" align="center" color="textSecondary">
+                    I can confirm that the above details are correct.
+                  </Typography>}
               />
             </Grid>
           </Grid>
@@ -195,7 +196,7 @@ export default function UserProfileForm() {
           <Grid container justify="flex-end">
             <Grid item>
               <Link href="#" variant="body2">
-              
+
               </Link>
             </Grid>
           </Grid>

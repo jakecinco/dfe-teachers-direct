@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
-import Button from '@material-ui/core/Button';
 import CheckCircleIcon from '@material-ui/icons/CheckCircle';
 import ErrorIcon from '@material-ui/icons/Error';
 import InfoIcon from '@material-ui/icons/Info';
@@ -78,24 +77,24 @@ MySnackbarContentWrapper.propTypes = {
   variant: PropTypes.oneOf(['error', 'info', 'success', 'warning']).isRequired,
 };
 
-const useStyles2 = makeStyles(theme => ({
-  margin: {
-    margin: theme.spacing(1),
-  },
-}));
+// const useStyles2 = makeStyles(theme => ({
+//   margin: {
+//     margin: theme.spacing(1),
+//   },
+// }));
 
 export default function Alerts() {
-  const classes = useStyles2();
+  //const classes = useStyles2();
   const [open, setOpen] = React.useState(false);
 
   React.useEffect(() => {
-      setTimeout(() => {
-          setOpen(true)
-      }, 5000)
+    setTimeout(() => {
+      setOpen(true)
+    }, 3000)
   }, [])
-  const handleClick = () => {
-    setOpen(true);
-  };
+  // const handleClick = () => {
+  //   setOpen(true);
+  // };
 
   const handleClose = (event, reason) => {
     if (reason === 'clickaway') {
@@ -107,9 +106,6 @@ export default function Alerts() {
 
   return (
     <div>
-      {/* <Button variant="outlined" className={classes.margin} onClick={handleClick}>
-        Open your notifications
-      </Button> */}
       <Snackbar
         anchorOrigin={{
           vertical: 'bottom',
@@ -125,28 +121,6 @@ export default function Alerts() {
           message="You have a job invite from Middlesex University!"
         />
       </Snackbar>
-      {/* <MySnackbarContentWrapper
-        variant="info"
-        className={classes.margin}
-        message="This is an information message!"
-      /> */}
-      {/* <MySnackbarContentWrapper
-        variant="error"
-        className={classes.margin}
-        message="This is an error message!"
-        autoHideDuration={200}
-      />
-      <MySnackbarContentWrapper
-        variant="warning"
-        className={classes.margin}
-        message="This is a warning message!"
-      />
-      
-      <MySnackbarContentWrapper
-        variant="success"
-        className={classes.margin}
-        message="This is a success message!"
-      /> */}
     </div>
   );
 }
