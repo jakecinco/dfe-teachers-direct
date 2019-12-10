@@ -122,7 +122,7 @@ Please note that you need to enter your number without “/” or “RP”. For 
                 fullWidth
                 name="password"
                 label="Teacher reference number (TRN)"
-                value="RP4267162"
+                value="4267162"
               />
               </Tooltip>
             </Grid>

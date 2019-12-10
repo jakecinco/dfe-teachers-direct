@@ -130,7 +130,7 @@ export default function UserProfileForm() {
                 required
                 fullWidth
                 id="email"
-                label="Teacher qualification status (TQF)"
+                label="Teacher qualification status (TQS)"
                 name="email"
                 autoComplete="email"
                 value="Qualified"
